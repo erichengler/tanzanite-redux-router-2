@@ -1,33 +1,32 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
-function StepTwo () {
+function StepFour () {
 
     const history = useHistory();
-
-    const type = useSelector(store => store.activityType)
-
     const dispatch = useDispatch();
 
+    const miles = useSelector(store => store.miles);
+
     const handleChange = (event) => {
-        const action = { type: 'SET_ACTIVITY_TYPE', payload: event.target.value}
+        const action = {type: "SET_MILES", payload: event.target.value};
         dispatch(action);
     }
 
     const nextPage = () => {
-            history.push('/step-3');
-    }
+        history.push('/step-5');
+}
 
     return (
         <>
-            <h3>Step Two</h3>
-            Activity:
+            <h3>Step Four</h3>
+            Miles:
             <form>
-                <input value={type} onChange={handleChange} type="text" />
+                <input value={miles} onChange={handleChange} type="number" />
             </form>
             <button onClick={nextPage}>Next</button>
         </>
     );
 }
 
-export default StepTwo;
+export default StepFour;

@@ -34,11 +34,14 @@ function StepOne () {
     return (
         <>
             <h3>Step One</h3>
+            Name:
             <form onSubmit={addPerson}>
                 <input value={personName} onChange={handleChange} type='text' />
                 <input type='submit' />
             </form>
-
+            <br />
+            <br />
+            Name List:
             <ul>
               {
                 // Setting the key equal to index to stop console error

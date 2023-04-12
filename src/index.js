@@ -28,12 +28,37 @@ const allPeople = (state = [], action) => {
     return state;
 }
 
+const activityType = (state = '', action) => {
+    if ( action.type === "SET_ACTIVITY_TYPE" ) {
+        return action.payload;
+    }
+    return state;
+}
+
+const minutes = (state = 0, action) => {
+    if ( action.type === "SET_MINUTES" ) {
+        return action.payload;
+    }
+    return state;
+}
+
+const miles = (state = 0, action) => {
+    if ( action.type === "SET_MILES" ) {
+        return action.payload;
+    }
+    return state;
+}
+
+
 // Store
 const storeInstance = createStore(
     combineReducers(
         {
             personName,
             allPeople,
+            activityType,
+            minutes,
+            miles,
             // Other reducers go here
         }
     ),
