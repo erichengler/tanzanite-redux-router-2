@@ -3,6 +3,7 @@ import StepOne from '../Steps/StepOne';
 import StepTwo from '../Steps/StepTwo';
 import StepThree from '../Steps/StepThree';
 import StepFour from '../Steps/StepFour';
+import Review from '../Steps/Review';
 
 
 function App () {
@@ -30,6 +31,10 @@ function App () {
 
         <Route exact path="/step-4">
           <StepFour />
+        </Route>
+
+        <Route exact path="/review">
+          <Review />
         </Route>
 
       </Router>

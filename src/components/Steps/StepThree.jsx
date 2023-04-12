@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
+// StepThree collects user input for minutes
 function StepThree () {
 
     const history = useHistory();
@@ -13,18 +14,24 @@ function StepThree () {
         dispatch(action);
     }
 
-    const nextPage = () => {
-        history.push('/step-4');
+    const nextPage = (event) => {
+        event.preventDefault();
+        if (minutes > 0) {
+            history.push('/step-4');
+        } else {
+            alert('Please enter a value greater than 0.');
+        }
 }
 
     return (
         <>
             <h3>Step Three</h3>
-            Minutes:
-            <form>
+            <form onSubmit={nextPage} >
+                <label htmlFor="minutes">Minutes</label>
+                <br />
                 <input value={minutes} onChange={handleChange} type="number" />
+                <input type="submit" value="Next" />
             </form>
-            <button onClick={nextPage}>Next</button>
         </>
     );
 }

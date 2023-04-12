@@ -28,7 +28,7 @@ const allPeople = (state = [], action) => {
     return state;
 }
 
-const activityType = (state = '', action) => {
+const activityType = (state = 'Walking', action) => {
     if ( action.type === "SET_ACTIVITY_TYPE" ) {
         return action.payload;
     }
@@ -48,7 +48,6 @@ const miles = (state = 0, action) => {
     }
     return state;
 }
-
 
 // Store
 const storeInstance = createStore(

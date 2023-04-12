@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
+// StepOne collects user input for name(s)
 function StepOne () {
 
     // Input value comes from Redux (useSelector)
@@ -34,8 +35,9 @@ function StepOne () {
     return (
         <>
             <h3>Step One</h3>
-            Name:
             <form onSubmit={addPerson}>
+                <label htmlFor="name">Name</label>
+                <br />
                 <input value={personName} onChange={handleChange} type='text' />
                 <input type='submit' />
             </form>
